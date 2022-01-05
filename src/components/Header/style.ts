@@ -2,7 +2,7 @@ import styled from 'styled-components'
 
 export const Content = styled.div`
   display:flex; 
-  height:100px;
+  height:160px;
   width:1400px;
   padding: 0 160px;
   justify-content:space-between;
