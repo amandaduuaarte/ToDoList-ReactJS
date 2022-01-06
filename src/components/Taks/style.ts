@@ -10,10 +10,9 @@ export const Contatiner = styled.div`
     display:flex;
     flex-direction:column;
     justify-content:center;
-    width:70rem;
+    width:79rem;
     height:17.25rem;
     border-radius:1.25rem;
-
 
     head{
       display:flex;
@@ -40,7 +39,7 @@ export const Contatiner = styled.div`
       }
 
       img{
-        margin-left:50rem;
+        margin-left:58rem;
       }
     }
 

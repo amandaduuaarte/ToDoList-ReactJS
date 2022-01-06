@@ -2,24 +2,25 @@ import styled from 'styled-components'
 
 export const Content = styled.div`
   display:flex; 
-  height:160px;
-  width:1400px;
-  padding: 0 160px;
+  height:10rem;
+  width:105rem;
+  padding: 0 10rem;
   justify-content:space-between;
 
   img{
-    height:40px;
-    width:120px;
-    margin-top:64px;
+    height:2.5rem;
+    width:7.5rem;
+    margin-top:4rem;
+    margin-left:10rem;
   }
 
   button{
     background: var(--purple);
-    margin-top:60px;
-    width: 195px;
-    height:48px;
+    margin-top:3.73rem;
+    width: 12.188rem;
+    height:3rem;
     border:none;
-    border-radius:20px;
+    border-radius:1.25rem;
     color: var(--gray-50);
     font-family: 'Inter', sans-serif;
     font-weight:600;
