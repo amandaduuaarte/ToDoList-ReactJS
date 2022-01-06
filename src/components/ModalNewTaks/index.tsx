@@ -1,6 +1,6 @@
-import {useState} from 'react'
 import { Container } from "./style"
 import Modal from 'react-modal'
+import CloseImg from '../../assets/imgs/Closer.svg'
 
 interface modalProps {
   modalIsOpen:boolean,
@@ -8,27 +8,25 @@ interface modalProps {
 }
 
 export function ModalNewTaks ({modalIsOpen,onRequestClose}  :modalProps){
-  const customStyles = {
-    content: {
-      top: '50%',
-      left: '50%',
-      right: 'auto',
-      bottom: 'auto',
-      marginRight: '-50%',
-      transform: 'translate(-50%, -50%)',
-    },
-  };
-
+ 
   return(
+    <>
       <Modal 
       isOpen={modalIsOpen}
       onRequestClose={onRequestClose}
-      style={customStyles}
-     
+      overlayClassName="react-modal-overlay"
+      className="react-modal-content"
       >
        <Container>
-        <h2>teste</h2>
+        <button type="button" onClick={onRequestClose} className="react-modal-close">
+         <img src={CloseImg} alt="closeIcon"/>
+        </button>
+        <h2>New Task</h2>
+        <input type="input" placeholder="Title"/>
+        <input type="text"  placeholder="Description" />
+        <button type="submit">Save</button>
       </Container>
       </Modal>
+    </>
   )
 }
