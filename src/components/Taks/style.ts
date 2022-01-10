@@ -2,7 +2,9 @@ import styled from 'styled-components'
 
 export const Contatiner = styled.div`
   display:flex;
+  flex-direction:column;
   justify-content:center;
+  align-items:center; 
   margin: 3.813rem 0 11.063rem 0 ;
   
 
@@ -13,6 +15,7 @@ export const Contatiner = styled.div`
     width:79rem;
     height:17.25rem;
     border-radius:1.25rem;
+    margin-bottom:1.25rem;
 
     head{
       display:flex;
