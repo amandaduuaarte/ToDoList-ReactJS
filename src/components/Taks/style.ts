@@ -7,7 +7,10 @@ export const Contatiner = styled.div`
   align-items:center; 
   margin: 3.813rem 0 11.063rem 0 ;
   
-
+  @media(max-width:900px){
+    margin:1.5rem 0 2rem 0;
+  }
+  
   div{
     display:flex;
     flex-direction:column;
@@ -16,6 +19,11 @@ export const Contatiner = styled.div`
     height:17.25rem;
     border-radius:1.25rem;
     margin-bottom:1.25rem;
+    @media(max-width:900px){
+      height: 22.5rem                         ;
+      width:21rem;
+      margin-bottom:0.25rem;
+  }
 
     head{
       display:flex;
@@ -26,10 +34,18 @@ export const Contatiner = styled.div`
       border-top-left-radius:1.25rem;
       border-top-right-radius:1.25rem;
 
+      @media(max-width:900px){
+        height:3rem;
+
+      }
+
       img:first-child{
         height:1.875rem;
         width: 1.875rem;
-       margin:1.25rem;
+        margin:1.25rem;
+        @media(max-width:900px){
+          margin:0.9rem;
+        }
       }
 
       h2{
@@ -39,8 +55,11 @@ export const Contatiner = styled.div`
         color:var(--gray-50);
         align-self:start;
         padding: 1.75rem 0;
+        @media(max-width:900px){
+          padding:1rem 0;
+        }
       }
-
+      }
       img{
         margin-left:58rem;
       }
@@ -54,6 +73,10 @@ export const Contatiner = styled.div`
       font-family: 'Inter', sans-serif;
       font-weight: 400;
       padding:1.25rem ;
+
+      @media(max-width:900px){
+        height: 17.75rem;
+      }
     }
 
     footer{

@@ -1,27 +1,33 @@
 import { Container } from "./style"
 import Modal from 'react-modal'
 import CloseImg from '../../assets/imgs/Closer.svg'
-import { useState,useContext } from "react"
-import taskContext from '../../hooks/context'
+import {useTasks} from '../../hooks/context'
+import { useState,FormEvent } from "react"
+
 
 interface modalProps {
   modalIsOpen:boolean,
   onRequestClose: ()=> void,
-  handleSetNewTask:()=> void,
 }
 
-interface taskProps {
-  title:string,
-  description:string
-}
-export function ModalNewTaks ({modalIsOpen,onRequestClose,handleSetNewTask}  :modalProps){
+
+export function ModalNewTaks ({modalIsOpen,onRequestClose}  :modalProps){
+  const {createTask} = useTasks();
   const [title, setTitle] = useState('');
   const [description, setDescription] = useState('');
-  const [task, setTask] = useState<taskProps[]>([]);
+
+  async function handleCreateNewTask(event: FormEvent) {
+    event.preventDefault(); 
+   await createTask({
+      title,
+      description 
+    }) 
+    onRequestClose();
+  }
 
 
   return(
-    <taskContext.Provider value={{title:title,description:description}}>
+    
       <Modal 
       isOpen={modalIsOpen}
       onRequestClose={onRequestClose}
@@ -43,10 +49,10 @@ export function ModalNewTaks ({modalIsOpen,onRequestClose,handleSetNewTask}  :mo
         />
         <button 
         type="submit"
-        onClick={handleSetNewTask}
+        onClick={handleCreateNewTask}
         >Save</button>
       </Container>
       </Modal>
-    </taskContext.Provider>
+   
   )
 }

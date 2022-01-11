@@ -2,30 +2,32 @@ import {Contatiner} from './style'
 import Icon from '../../assets/imgs/Rectangle.svg';
 import dotIcon from '../../assets/imgs/DotIcon.svg';
 
-interface taskProps {
- newTask:{
-   title: string,
-   description: string
- };
-}
+import {useTasks} from '../../hooks/context'
+
+
 export function Task () {
-  
+  const {tasks} = useTasks();
+
+  console.log(tasks)
   return(
     <Contatiner>
-
+      
+      {tasks.map(task=>{
+        return(
           <div>
-            <head>
-              <img src={Icon} alt="RectangleIcon" />
-              <h2>task.title</h2>
-              <img src={dotIcon} alt="icon"/>
-            </head>
-            <main>
-              <p>task.description</p>
-            </main>
-            <footer>
-              <p>Created March 30, 2021 1:24pm</p>
-            </footer>
-          </div>
+          <head>
+            <img src={Icon} alt="RectangleIcon" />
+            <h2>{task.title}</h2>
+            <img src={dotIcon} alt="icon"/>
+          </head>
+          <main>
+            <p>{task.description}</p>
+          </main>
+          <footer>
+            <p>{task.createdAt}</p>
+          </footer>
+        </div>
+      )})}  
     </Contatiner>
   )
 }
