@@ -24,7 +24,8 @@ export function Task () {
             <p>{task.description}</p>
           </main>
           <footer>
-            <p>{task.createdAt}</p>
+            <p>Created  {new Intl.DateTimeFormat('pt-BR').format(
+              new Date (task.createdAt) )}</p>
           </footer>
         </div>
       )})}  

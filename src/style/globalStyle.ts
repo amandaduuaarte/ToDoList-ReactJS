@@ -45,7 +45,10 @@ export const GlobalStyle = createGlobalStyle`
   height:37.313rem;
   width:36rem;
   display:flex;
-
+  @media(max-width:900px){
+    width:21rem;
+    height: 37.313rem;
+  }
 }
 .react-modal-close{
   position:absolute;

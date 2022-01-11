@@ -36,7 +36,6 @@ export const Contatiner = styled.div`
 
       @media(max-width:900px){
         height:3rem;
-
       }
 
       img:first-child{
@@ -61,7 +60,7 @@ export const Contatiner = styled.div`
       }
       }
       img{
-        margin-left:58rem;
+        margin-left:65rem;
       }
     }
 

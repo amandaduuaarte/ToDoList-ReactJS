@@ -8,6 +8,10 @@ export const Container = styled.div`
   color: var(--gray-50);
   font-family: 'Inter', sans-serif;
   padding: 0 3rem 3rem 3rem;
+
+  @media(max-width:900px){
+    padding:0 1.813rem;
+  }
   
 
   img{
@@ -21,6 +25,10 @@ export const Container = styled.div`
     font-size:1.625rem;
     align-self:start;
     padding-bottom: 2.75rem;
+
+    @media(max-width:900px){
+      margin-top:1.6rem;
+    }
   }
 
   input{
@@ -34,6 +42,9 @@ export const Container = styled.div`
     border-radius:1.25rem;
     margin-bottom:1.25rem;
     font-size:1rem;
+    @media(max-width:900px){
+      width: 17.864rem; 
+    }
   }
   input[type="text"] {
     height:14rem;
@@ -47,6 +58,11 @@ export const Container = styled.div`
      border-radius:1.25rem;
      color: var(--gray-50);
      font-size:1rem;
+     @media(max-width:900px){
+       width:11.726rem;
+       align-self: center;
+     }
+     
    }
  
 
