@@ -5,7 +5,7 @@ export function Footer (){
   return(
     <Container>
       <div>
-        <p>Developed by Outboxup</p>
+        <p>Developed by Amanda D</p>
       </div>
     </Container>
   )

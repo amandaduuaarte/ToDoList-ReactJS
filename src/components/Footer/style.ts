@@ -7,12 +7,18 @@ export const Container = styled.div`
   justify-content:center;
 
 
+
   div{
     width:70rem;
     height:0.063rem;
-    background: #414052;
+    border-top:1px solid #414052;
     margin-bottom:3.688rem;
     text-align:center;
+
+    @media(max-width:900px){
+     padding:0;
+     width:50rem;
+    }
     
 
     p{
@@ -21,6 +27,9 @@ export const Container = styled.div`
       font-family: 'Inter', sans-serif;
       font-weight:300;
       font-size: 1rem;
+      @media(max-width:900px){
+        text-align:center;
+      }
     }
   }
 `;
