@@ -1,18 +1,17 @@
 import React from "react";
-import { Content } from "./style";
-import LogoImg from "../../assets/imgs/Logo.svg";
+import { Container, HeaderText } from "./style";
+import { colors } from "../../style/colors";
 
-interface headerProps {
-  onOpenModalNewTaks: () => void;
-}
+// interface headerProps {
+//   onOpenModalNewTaks: () => void;
+// }
 
-export function Header({ onOpenModalNewTaks }: headerProps) {
+export function Header() {
   return (
-    <Content>
-      <img src={LogoImg} alt="logo" />
-      <button type="button" onClick={onOpenModalNewTaks}>
-        New Task
-      </button>
-    </Content>
+    <Container>
+      <HeaderText color={colors.background["blue-dark"]}>
+        to<HeaderText>do</HeaderText>
+      </HeaderText>
+    </Container>
   );
 }

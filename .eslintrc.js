@@ -34,6 +34,7 @@ module.exports = {
     "react/function-component-definition": 0,
     "react/jsx-no-useless-fragment": 0,
     "react/react-in-jsx-scope": 0,
+    "@typescript-eslint/no-explicit-any": 0,
   },
   settings: {
     "import/resolver": {

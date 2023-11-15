@@ -1,12 +1,19 @@
 import React from "react";
-import { TextField } from "../../components/TextField";
-import { Task } from "../../components/Taks";
+import { Button, Header, TextField } from "../../components";
+import { Container, CreateTasksContainer } from "./styles";
 
 export function Home() {
   return (
     <>
-      <TextField />
-      <Task />
+      <Header />
+      <Container>
+        <CreateTasksContainer>
+          <div>
+            <TextField placeholder="Adicione uma nova tarefa" />
+          </div>
+          <Button />
+        </CreateTasksContainer>
+      </Container>
     </>
   );
 }
