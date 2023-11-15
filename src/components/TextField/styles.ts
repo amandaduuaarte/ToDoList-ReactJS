@@ -8,9 +8,7 @@ export const Container = styled.input`
   border-radius: 0.5rem;
   color: white;
   padding: 0 12px;
-  border: none;
-
-  :focus {
+  &:focus {
     border: 1px solid red;
   }
 `;

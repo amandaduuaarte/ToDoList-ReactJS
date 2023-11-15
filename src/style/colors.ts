@@ -17,4 +17,7 @@ export const colors = {
   feedback: {
     danger: "#E25858",
   },
+  text: {
+    white: "#FFFFFF",
+  },
 };
