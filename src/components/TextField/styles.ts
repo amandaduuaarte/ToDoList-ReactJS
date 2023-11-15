@@ -6,9 +6,10 @@ export const Container = styled.input`
   height: 45px;
   width: 100%;
   border-radius: 0.5rem;
+  border: none;
   color: white;
   padding: 0 12px;
   &:focus {
-    border: 1px solid red;
+    outline: none;
   }
 `;

@@ -3,3 +3,4 @@ export * from "./Checkbox";
 export * from "./Header";
 export * from "./Tasks";
 export * from "./TextField";
+export * from "./NotFound";

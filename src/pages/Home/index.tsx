@@ -1,5 +1,5 @@
 import React from "react";
-import { Button, Header, TextField } from "../../components";
+import { Button, Header, NotFound, TextField } from "../../components";
 import { Container, CreateTasksContainer } from "./styles";
 
 export function Home() {
@@ -13,6 +13,7 @@ export function Home() {
           </div>
           <Button />
         </CreateTasksContainer>
+        <NotFound />
       </Container>
     </>
   );
