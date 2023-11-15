@@ -8,11 +8,12 @@ export const Container = styled.div`
   display: flex;
   background: ${colors.base["gray-500"]};
   height: 5rem;
-  width: 29rem;
+  width: 100%;
   border-radius: 0.5rem;
-  border: 1px solid ${colors.base["gray-700"]};
+  border: 1px solid ${colors.base["gray-500"]};
   margin: 8px 0;
   font-family: "Inter";
+  justify-content: space-around;
 `;
 
 export const TaskContent = styled.div`
@@ -24,7 +25,7 @@ export const TaskContent = styled.div`
 `;
 
 export const TextContainer = styled.div`
-  width: 70%;
+  width: 80%;
 `;
 
 export const TaskText = styled.p<TaskProps>`
