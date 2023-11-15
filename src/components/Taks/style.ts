@@ -33,10 +33,9 @@ export const Checkbox = styled.input.attrs({ type: "radio" })`
   height: 1rem;
   width: 1rem;
   cursor: pointer;
+  background: ${colors.background["purple-dark"]};
 `;
 
-export const Icon = styled.img`
-  height: 16px;
-  width: 16px;
+export const Icon = styled.div`
   cursor: pointer;
 `;

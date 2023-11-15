@@ -1,14 +1,9 @@
 import React from "react";
+import { Delete } from "@mui/icons-material";
 
-import {
-  Checkbox,
-  Container,
-  Icon,
-  TaskContent,
-  TaskText,
-  TextContainer,
-} from "./style";
-import CloseIcon from "../../assets/icons/trash.svg";
+import { Container, Icon, TaskContent, TaskText, TextContainer } from "./style";
+import { Checkbox } from "../Checkbox";
+import { colors } from "../../style/colors";
 // import { useTasks } from "../../hooks/context";
 export function Task() {
   //   const { tasks } = useTasks();
@@ -23,11 +18,9 @@ export function Task() {
             semper. Duis vel sed fames integer.
           </TaskText>
         </TextContainer>
-        <Icon
-          src={CloseIcon}
-          alt="delete_icon"
-          onClick={() => console.log("dadsa")}
-        />
+        <Icon onClick={() => console.log("dadsa")}>
+          <Delete sx={{ color: colors.base["gray-300"] }} />
+        </Icon>
       </TaskContent>
     </Container>
   );
