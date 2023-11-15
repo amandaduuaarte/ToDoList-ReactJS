@@ -1,16 +1,16 @@
-import React, { useState } from "react";
+import React from "react";
 import CheckIcon from "@mui/icons-material/Check";
 import { Container } from "./styles";
 import { colors } from "../../style/colors";
 
-export function Checkbox() {
-  const [isChecked, setIsChecked] = useState<boolean>(false);
-
+interface CheckboxProps {
+  done: boolean;
+  isDone: () => void;
+}
+export function Checkbox({ isDone, done }: CheckboxProps) {
   return (
-    <Container isChecked={isChecked} onClick={() => setIsChecked(!isChecked)}>
-      {isChecked && (
-        <CheckIcon sx={{ color: colors.text.white, fontSize: 12 }} />
-      )}
+    <Container isChecked={done} onClick={() => isDone()}>
+      {done && <CheckIcon sx={{ color: colors.text.white, fontSize: 12 }} />}
     </Container>
   );
 }

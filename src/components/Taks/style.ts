@@ -1,6 +1,9 @@
 import styled from "styled-components";
 import { colors } from "../../style/colors";
 
+interface TaskProps {
+  isDone?: boolean;
+}
 export const Container = styled.div`
   display: flex;
   background: ${colors.base["gray-500"]};
@@ -9,6 +12,7 @@ export const Container = styled.div`
   border-radius: 0.5rem;
   border: 1px solid ${colors.base["gray-700"]};
   margin: 8px 0;
+  font-family: "Inter";
 `;
 
 export const TaskContent = styled.div`
@@ -23,10 +27,12 @@ export const TextContainer = styled.div`
   width: 70%;
 `;
 
-export const TaskText = styled.p`
-  color: ${colors.text.white};
+export const TaskText = styled.p<TaskProps>`
+  color: ${({ isDone }) =>
+    isDone ? colors.base["gray-300"] : colors.text.white};
   font-size: 0.8rem;
   font-weight: 400;
+  text-decoration: ${({ isDone }) => (isDone ? "line-through" : "none")};
 `;
 
 export const Checkbox = styled.input.attrs({ type: "radio" })`
