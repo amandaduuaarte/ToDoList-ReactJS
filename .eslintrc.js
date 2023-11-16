@@ -32,9 +32,6 @@ module.exports = {
     "react/require-default-props": 0,
     "react/jsx-no-constructed-context-values": 0,
     "react/function-component-definition": 0,
-    "react/jsx-no-useless-fragment": 0,
-    "react/react-in-jsx-scope": 0,
-    "@typescript-eslint/no-explicit-any": 0,
   },
   settings: {
     "import/resolver": {

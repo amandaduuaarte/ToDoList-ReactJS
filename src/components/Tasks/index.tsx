@@ -1,29 +1,32 @@
-import React, { useState } from "react";
+import React from "react";
 import { Delete } from "@mui/icons-material";
 
 import { Container, Icon, TaskContent, TaskText, TextContainer } from "./style";
 import { Checkbox } from "../Checkbox";
 import { colors } from "../../style/colors";
+import { useTasks } from "../../hooks/useTasks";
 
-export function Tasks() {
-  const [isDone, setIsDone] = useState<boolean>(false);
-
+interface TaskProps {
+  data: {
+    id: string;
+    title: string;
+    isDone: boolean;
+  };
+}
+export function Tasks({ data }: TaskProps) {
+  const { id, isDone, title } = data;
+  const { removeTask } = useTasks();
   return (
-    <>
-      <Container>
-        <TaskContent>
-          <Checkbox isDone={() => setIsDone(!isDone)} done={isDone} />
-          <TextContainer>
-            <TaskText isDone={isDone}>
-              Integer urna interdum massa libero auctor neque turpis turpis
-              semper. Duis vel sed fames integer.
-            </TaskText>
-          </TextContainer>
-          <Icon onClick={() => console.log("dadsa")}>
-            <Delete sx={{ color: colors.base["gray-300"] }} />
-          </Icon>
-        </TaskContent>
-      </Container>
-    </>
+    <Container>
+      <TaskContent>
+        <Checkbox isDone={() => console.log(isDone)} done={isDone} />
+        <TextContainer>
+          <TaskText isDone={isDone}>{title}</TaskText>
+        </TextContainer>
+        <Icon onClick={() => removeTask(id)}>
+          <Delete sx={{ color: colors.base["gray-300"] }} />
+        </Icon>
+      </TaskContent>
+    </Container>
   );
 }

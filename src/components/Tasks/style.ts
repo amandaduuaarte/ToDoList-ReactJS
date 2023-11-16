@@ -18,6 +18,7 @@ export const Container = styled.div`
 
 export const TaskContent = styled.div`
   display: flex;
+  width: 100%;
   padding: 0 1rem;
   justify-content: space-between;
   align-items: center;
@@ -26,6 +27,7 @@ export const TaskContent = styled.div`
 
 export const TextContainer = styled.div`
   width: 80%;
+  text-align: center;
 `;
 
 export const TaskText = styled.p<TaskProps>`

@@ -41,6 +41,11 @@ export const StatusTasksContainer = styled.div<StatusTasksProps>`
   }
 `;
 
+export const InlineBlock = styled.div`
+  display: flex;
+  flex-direction: row;
+`;
+
 export const TasksIndicator = styled.div`
   background: ${colors.base["gray-400"]};
   flex-direction: row;
@@ -48,6 +53,7 @@ export const TasksIndicator = styled.div`
   border-radius: 12px;
   width: auto;
   padding: 0 4px;
+  margin-left: 1rem;
   height: 20px;
   text-align: center;
   color: ${colors.base["gray-100"]};

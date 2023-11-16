@@ -2,10 +2,12 @@
 // import { api } from "../services/api";
 
 // interface taskProps {
+//   id: string;
 //   title: string;
 //   description: string;
 //   createdAt: string;
 // }
+
 // type TaskInput = Omit<taskProps, "createdAt">;
 
 // interface taskProviderProps {
