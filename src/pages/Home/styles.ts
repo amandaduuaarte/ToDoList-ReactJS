@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { colors } from "../../style/colors";
+import { colors, screens } from "../../style";
 
 interface StatusTasksProps {
   color?: string;
@@ -12,8 +12,6 @@ export const Container = styled.div`
   align-items: center;
   height: 100%;
   width: 100%;
-  padding: 0 25rem;
-  align-self: center;
 `;
 
 export const CreateTasksContainer = styled.div`
@@ -21,20 +19,41 @@ export const CreateTasksContainer = styled.div`
   flex-direction: row;
   justify-content: space-between;
   margin-top: -2rem;
-  width: 100%;
+  padding: 0 25rem;
+  width: 85rem;
+  flex-wrap: wrap;
 
-  div {
-    width: 85%;
+  @media (max-width: ${screens.smartphone.max}px) {
+    width: 100%;
+    padding: 0;
+    justify-content: center;
   }
 `;
 
-export const StatusTasksContainer = styled.div<StatusTasksProps>`
+export const InputContent = styled.div`
+  width: 80%;
+
+  @media (max-width: ${screens.smartphone.max}px) {
+    width: 60%;
+    margin-right: 24px;
+  }
+`;
+
+export const TasksStorageContainer = styled.div<StatusTasksProps>`
   display: flex;
   margin-top: 2rem;
   justify-content: space-between;
   height: auto;
   width: 100%;
+  flex-wrap: wrap;
 
+  @media (max-width: ${screens.smartphone.max}px) {
+    justify-content: center;
+    align-self: center;
+  }
+`;
+
+export const StatusTasksContainer = styled(TasksStorageContainer)`
   p {
     font-weight: 700;
     color: ${colors.background["blue-dark"]};
@@ -57,4 +76,19 @@ export const TasksIndicator = styled.div`
   height: 20px;
   text-align: center;
   color: ${colors.base["gray-100"]};
+
+  @media (max-width: ${screens.smartphone.max}px) {
+    margin-right: 1rem;
+  }
+`;
+
+export const TasksList = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 64rem;
+
+  @media (max-width: ${screens.smartphone.max}px) {
+    width: 100%;
+  }
 `;

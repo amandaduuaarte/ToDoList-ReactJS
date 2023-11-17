@@ -13,7 +13,7 @@ export function Button({ title, callback }: ButtonProps) {
     <Container onClick={() => callback()}>
       <ButtonContainer>
         <ButtonText>{title || "Criar"}</ButtonText>
-        <AddCircleOutlineIcon sx={{ marginLeft: 1 }} />
+        <AddCircleOutlineIcon />
       </ButtonContainer>
     </Container>
   );

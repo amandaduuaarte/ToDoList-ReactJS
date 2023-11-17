@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { colors } from "../../style/colors";
+import { colors } from "../../style";
 
 interface HeaderProps {
   color?: string;

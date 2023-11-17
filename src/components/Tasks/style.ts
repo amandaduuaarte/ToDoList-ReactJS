@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { colors } from "../../style/colors";
+import { colors, screens } from "../../style";
 
 interface TaskProps {
   isDone?: boolean;
@@ -13,7 +13,12 @@ export const Container = styled.div`
   border: 1px solid ${colors.base["gray-500"]};
   margin: 8px 0;
   font-family: "Inter";
+
   justify-content: space-around;
+
+  @media (max-width: ${screens.smartphone.max}px) {
+    width: 60%;
+  }
 `;
 
 export const TaskContent = styled.div`
@@ -36,6 +41,10 @@ export const TaskText = styled.p<TaskProps>`
   font-size: 0.8rem;
   font-weight: 400;
   text-decoration: ${({ isDone }) => (isDone ? "line-through" : "none")};
+
+  @media (max-width: ${screens.smartphone.max}px) {
+    font-size: 1rem;
+  }
 `;
 
 export const Checkbox = styled.input.attrs({ type: "radio" })`
@@ -43,6 +52,11 @@ export const Checkbox = styled.input.attrs({ type: "radio" })`
   width: 1rem;
   cursor: pointer;
   background: ${colors.background["purple-dark"]};
+
+  @media (max-width: ${screens.smartphone.max}px) {
+    height: 1.6rem;
+    width: 1.6rem;
+  }
 `;
 
 export const Icon = styled.div`

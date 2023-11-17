@@ -1,11 +1,14 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Button, Header, NotFound, Tasks, TextField } from "../../components";
 import {
   Container,
   CreateTasksContainer,
   InlineBlock,
+  InputContent,
   StatusTasksContainer,
   TasksIndicator,
+  TasksList,
+  TasksStorageContainer,
 } from "./styles";
 import { colors } from "../../style/colors";
 import { useTasks } from "../../hooks/useTasks";
@@ -17,26 +20,55 @@ interface TasksData {
 }
 
 export function Home() {
-  const { tasks, createTask } = useTasks();
+  const [newTask, setNewTask] = useState<string>();
+  const [error, setError] = useState<string>();
+  const { tasks, doneList, createTask, getAllTasks } = useTasks();
+
+  const handleError = (): void => {
+    setError("O título da task não pode ser vazio.");
+  };
+
+  const handleTasks = (value?: string) => {
+    setNewTask(value);
+
+    if (!value) {
+      handleError();
+    }
+  };
+
+  const handleCreateTask = (): void => {
+    createTask({
+      id: Math.random().toString(),
+      title: newTask || "",
+      isDone: false,
+    });
+    setError("");
+  };
+
+  useEffect(() => {
+    getAllTasks();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   return (
-    <>
+    <Container>
       <Header />
-      <Container>
-        <CreateTasksContainer>
-          <div>
-            <TextField placeholder="Adicione uma nova tarefa" />
-          </div>
-          <Button
-            callback={() =>
-              createTask({
-                id: "02",
-                title: "tester 2",
-                isDone: false,
-              })
-            }
+
+      <CreateTasksContainer>
+        <InputContent>
+          <TextField
+            placeholder="Adicione uma nova tarefa"
+            onChangeText={(value?: string) => handleTasks(value)}
+            error={error}
           />
-        </CreateTasksContainer>
+        </InputContent>
+        <Button
+          callback={() =>
+            newTask && newTask?.length > 0 ? handleCreateTask() : handleError()
+          }
+        />
+      </CreateTasksContainer>
+      <TasksList>
         <StatusTasksContainer>
           <InlineBlock>
             <p>Tarefas criadas</p>{" "}
@@ -47,15 +79,22 @@ export function Home() {
             <p style={{ color: colors.background["purple-dark"] }}>
               Concluídas
             </p>{" "}
-            <TasksIndicator>0</TasksIndicator>
+            <TasksIndicator>
+              {tasks?.length > 0 && doneList > 0
+                ? `${doneList} de ${tasks.length}`
+                : doneList}
+            </TasksIndicator>
           </InlineBlock>
         </StatusTasksContainer>
-        {tasks?.length < 0 ? (
+
+        {tasks?.length === 0 ? (
           <NotFound />
         ) : (
-          tasks?.map((task: TasksData) => <Tasks data={task} />)
+          <TasksStorageContainer>
+            {tasks?.map((task: TasksData) => <Tasks data={task} />)}
+          </TasksStorageContainer>
         )}
-      </Container>
-    </>
+      </TasksList>
+    </Container>
   );
 }
