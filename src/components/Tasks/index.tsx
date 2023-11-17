@@ -15,11 +15,11 @@ interface TaskProps {
 }
 export function Tasks({ data }: TaskProps) {
   const { id, isDone, title } = data;
-  const { removeTask } = useTasks();
+  const { removeTask, handleTaskSituation } = useTasks();
   return (
     <Container>
       <TaskContent>
-        <Checkbox isDone={() => console.log(isDone)} done={isDone} />
+        <Checkbox isDone={() => handleTaskSituation(id)} done={isDone} />
         <TextContainer>
           <TaskText isDone={isDone}>{title}</TaskText>
         </TextContainer>
