@@ -33,7 +33,12 @@ function TasksProvider({ children }: TasksProviderProps) {
   const [doneList, setDoneList] = useState<number>(0);
 
   const getAllDoneTasks = useCallback(() => {
-    const storedData = JSON.parse(localStorage.getItem("data") || "[]");
+    let storedData = JSON.parse(localStorage.getItem("data") || "[]");
+
+    if (!storedData.tasks) {
+      localStorage.setItem("data", JSON.stringify({ tasks: [] }));
+      storedData = JSON.parse(localStorage.getItem("data") || "[]");
+    }
     storedData.tasks = storedData.tasks.filter(
       (task: TasksData) => task.isDone === true
     );
