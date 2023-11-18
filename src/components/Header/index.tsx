@@ -1,16 +1,13 @@
-import {Content} from "./style"
-import LogoImg from '../../assets/imgs/Logo.svg'
+import React from "react";
+import { Container, HeaderText } from "./style";
+import { colors } from "../../style/colors";
 
-
-interface headerProps {
-  onOpenModalNewTaks: () => void,
-}
-
-export function Header ({onOpenModalNewTaks}:headerProps){
-  return(
-    <Content>
-      <img src={LogoImg} alt="logo"/>
-      <button type="button" onClick={onOpenModalNewTaks}>New Task</button>
-      </Content>
-  )
+export function Header() {
+  return (
+    <Container>
+      <HeaderText color={colors.background["blue-dark"]}>
+        to<HeaderText>do</HeaderText>
+      </HeaderText>
+    </Container>
+  );
 }

@@ -1,37 +1,14 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import { App } from './App';
-import {createServer, Model} from 'miragejs'
+import React from "react";
+import { createRoot } from "react-dom/client";
 
-createServer({
-  models:{
-    task:Model, 
-  },
-  seeds(server){
-    
-    server.db.loadData ({
-    tasks:[
-  ]
-  })
-  },
-  routes(){
-    this.namespace = 'api'; 
-    this.get('/task', ()=>{
-      return this.schema.all('tasks');
-    }) 
-    this.post('/task',(schema,request)=>{
+import App from "./App";
+import { TasksProvider } from "./hooks/useTasks";
 
-      const data = JSON.parse(request.requestBody)
-
-      return schema.create('task',data);
-    })
-  }
-})
-
-
-ReactDOM.render(
+const root = createRoot(document.getElementById("root"));
+root.render(
   <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
+    <TasksProvider>
+      <App />
+    </TasksProvider>
+  </React.StrictMode>
 );
