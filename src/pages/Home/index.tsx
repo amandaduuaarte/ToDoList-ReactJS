@@ -43,6 +43,7 @@ export function Home() {
       isDone: false,
     });
     setError("");
+    setNewTask("");
   };
 
   useEffect(() => {
@@ -58,6 +59,7 @@ export function Home() {
         <InputContent>
           <TextField
             placeholder="Adicione uma nova tarefa"
+            value={newTask}
             onChangeText={(value?: string) => handleTasks(value)}
             error={error}
           />

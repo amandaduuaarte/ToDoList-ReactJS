@@ -64,7 +64,7 @@ export const StatusTasksContainer = styled(TasksStorageContainer)`
   }
 
   @media (min-width: ${screens.desktop.min}px) {
-    font-size: 1.5rem;
+    font-size: 1.2rem;
   }
 `;
 

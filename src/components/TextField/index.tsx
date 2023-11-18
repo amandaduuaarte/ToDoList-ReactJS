@@ -1,8 +1,9 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import React from "react";
+import React, { InputHTMLAttributes } from "react";
+
 import { Container, ErrorLabel } from "./styles";
 
-interface TextFieldProps {
+interface TextFieldProps extends InputHTMLAttributes<HTMLInputElement> {
   placeholder?: string;
   error?: string;
   onChangeText: (value?: string) => void;
@@ -11,6 +12,7 @@ export function TextField({
   placeholder,
   onChangeText,
   error,
+  ...rest
 }: TextFieldProps) {
   return (
     <>
@@ -18,6 +20,7 @@ export function TextField({
         type="text"
         placeholder={placeholder}
         onChange={(e) => onChangeText(e.target.value)}
+        {...rest}
       />
       {error && <ErrorLabel>{error}</ErrorLabel>}
     </>

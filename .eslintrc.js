@@ -32,6 +32,7 @@ module.exports = {
     "react/require-default-props": 0,
     "react/jsx-no-constructed-context-values": 0,
     "react/function-component-definition": 0,
+    "react/jsx-props-no-spreading": "off",
   },
   settings: {
     "import/resolver": {
