@@ -52,8 +52,9 @@
 
 <!-- ABOUT THE PROJECT -->
 ## About The Project
-<img src="images/clearDesktop.png" alt="Logo">
-
+<div align="center">
+<img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExNHo3NGxqNTM0aHlkcnVqNGM1M3o3OXM3cW1rZ2R6NTE2c240bGlvZyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/WdSJEXG8ULoyZA4qc5/giphy.gif" alt="Logo">
+</div>
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
