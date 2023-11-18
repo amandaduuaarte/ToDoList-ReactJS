@@ -13,12 +13,7 @@ export const Container = styled.div`
   border: 1px solid ${colors.base["gray-500"]};
   margin: 8px 0;
   font-family: "Inter";
-
   justify-content: space-around;
-
-  @media (max-width: ${screens.smartphone.max}px) {
-    width: 60%;
-  }
 `;
 
 export const TaskContent = styled.div`
@@ -38,12 +33,16 @@ export const TextContainer = styled.div`
 export const TaskText = styled.p<TaskProps>`
   color: ${({ isDone }) =>
     isDone ? colors.base["gray-300"] : colors.text.white};
-  font-size: 0.8rem;
+  font-size: 1rem;
   font-weight: 400;
   text-decoration: ${({ isDone }) => (isDone ? "line-through" : "none")};
 
   @media (max-width: ${screens.smartphone.max}px) {
     font-size: 1rem;
+  }
+
+  @media (max-width: ${screens.tablet.max}px) {
+    font-size: 1.2rem;
   }
 `;
 

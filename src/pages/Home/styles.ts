@@ -58,11 +58,23 @@ export const StatusTasksContainer = styled(TasksStorageContainer)`
     font-weight: 700;
     color: ${colors.background["blue-dark"]};
   }
+
+  @media (min-width: ${screens.tablet.min}px) {
+    font-size: 1.4rem;
+  }
+
+  @media (min-width: ${screens.desktop.min}px) {
+    font-size: 1.5rem;
+  }
 `;
 
 export const InlineBlock = styled.div`
   display: flex;
   flex-direction: row;
+
+  @media (max-width: ${screens.smartphone.max}px) {
+    margin-bottom: 12px;
+  }
 `;
 
 export const TasksIndicator = styled.div`
@@ -73,7 +85,7 @@ export const TasksIndicator = styled.div`
   width: auto;
   padding: 0 4px;
   margin-left: 1rem;
-  height: 20px;
+  height: auto;
   text-align: center;
   color: ${colors.base["gray-100"]};
 
@@ -88,7 +100,11 @@ export const TasksList = styled.div`
   justify-content: center;
   width: 64rem;
 
-  @media (max-width: ${screens.smartphone.max}px) {
-    width: 100%;
+  @media (max-width: ${screens.tablet.max}px) {
+    width: 80%;
+  }
+
+  @media (max-width: ${screens.desktop.min}px) {
+    width: 80%;
   }
 `;
